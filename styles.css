@@ -1,0 +1,76 @@
+/* Page */
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, hsl(220, 30%, 96%), hsl(0, 0%, 98%));
+}
+
+/* Calculator */
+#calculator{
+    font-family: "Segoe UI", "Poppins", Arial, sans-serif;
+    background-color: hsl(220, 15%, 18%);
+    border-radius: 18px;
+    max-width: 420px;
+    padding: 10px;
+    box-shadow: 0 15px 35px hsl(220, 20%, 20%, 0.35);
+}
+
+/* Display */
+#display{
+    width: 100%;
+    padding: 22px;
+    font-size: 4rem;
+    text-align: right;
+    border: none;
+    border-radius: 12px;
+    background-color: hsl(220, 15%, 22%);
+    color: hsl(0, 0%, 98%);
+    margin-bottom: 15px;
+}
+
+/* Keys */
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 15px;
+}
+
+/* Buttons */
+button{
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    border: none;
+    background-color: hsl(220, 15%, 30%);
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+button:hover{
+    background-color: hsl(58, 94%, 47%);
+}
+
+button:active{
+    background-color: hsl(70, 98%, 52%);
+    transform: scale(0.95);
+}
+
+/* Operator Buttons */
+.operator-btn{
+    background-color: hsl(55, 96%, 46%);
+}
+
+.operator-btn:hover{
+    background-color: hsl(61, 94%, 49%);
+}
+
+.operator-btn:active{
+    background-color: hsl(63, 90%, 47%);
+}
