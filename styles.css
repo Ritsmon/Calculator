@@ -27,7 +27,7 @@ body {
     overflow: hidden;
 }
 
-/* 🔥 Animated glowing side border */
+/* Glowing border */
 #calculator::before {
     content: "";
     position: absolute;
@@ -109,20 +109,6 @@ button:focus-visible {
 }
 
 .operator-btn:active {
-    background-color: #ffc266;
-}
-
-/* PLUS button specifically (16th child) */
-#keys button:nth-child(16) {
-    background-color: #ff9f0a;
-    color: white;
-}
-
-#keys button:nth-child(16):hover {
-    background-color: #ffb347;
-}
-
-#keys button:nth-child(16):active {
     background-color: #ffc266;
 }
 
