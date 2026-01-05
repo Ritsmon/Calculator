@@ -1,21 +1,45 @@
-⏱️ Stopwatch
-A high-accuracy, millisecond-precision stopwatch built with Vanilla JavaScript. This tool is designed for performance and reliability, featuring a clean, responsive interface and robust time-tracking logic.
+Calculator 
 
-✨ Features
-Millisecond Precision: Tracks time down to the 1/100th of a second for professional accuracy.
-Time Drift Correction: Uses Date.now() logic to ensure timing remains accurate even if the browser slows down.
-Interactive UI: Smooth hover transitions, scale-on-click feedback, and a clean "Courier New" monospace aesthetic.
-Responsive Design: Utilizes clamp() typography and Flexbox to look great on phones, tablets, and desktops.
-Visual States: Distinct color-coded buttons for Start, Stop, and Reset actions.
-🛠️ Technical Breakdown
-🧠 The Logic Layer
-The stopwatch uses a non-drifting time calculation method:
+A simple web-based calculator built using HTML, CSS, and JavaScript. It supports basic arithmetic operations like addition, subtraction, multiplication, and division, along with decimal calculations and a clear function.
 
-StartTime: Captures the timestamp when "Start" is clicked.
-ElapsedTime: Calculates the difference between Date.now() and the startTime.
-The Math: - Hours, minutes, and seconds are calculated using Math.floor and the Modulo (%) operator.
-Values are formatted using .padStart(2, "0") to ensure the classic 00:00:00:00 look.
-🎨 Styling & UX
-Gradients: A subtle linear-gradient background provides a premium feel.
-Hover Effects: Buttons change color and scale up slightly when hovered to provide clear affordance.
-Monospace Font: Using Courier New ensures that digits don't "jump" or wiggle as the numbers change, as every character takes up the same width.
+Features:
+
+Basic arithmetic operations: +, -, *, /
+
+Decimal support
+
+Clear display (C button)
+
+Error handling for invalid operations
+
+Modern, responsive UI
+
+Interactive button effects on hover and click
+
+File Structure:
+
+index.html – Main HTML file
+
+styles.css – CSS styling
+
+index.js – JavaScript logic
+
+Usage:
+
+Open index.html in a web browser.
+
+Click number buttons to input values.
+
+Click operator buttons (+, -, *, /) to perform calculations.
+
+Press = to get the result.
+
+Press C to clear the display.
+
+JavaScript Functions:
+
+appendToDisplay(input) – Adds clicked values/operators to the display.
+
+clearDisplay() – Clears the display.
+
+calculate() – Evaluates the expression and displays the result. Shows ERROR if invalid.
