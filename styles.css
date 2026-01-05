@@ -1,76 +1,131 @@
-/* Page */
+*{
+    box-sizing: border-box;
+}
+
+/* Center the calculator */
 body{
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, hsl(220, 30%, 96%), hsl(0, 0%, 98%));
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    font-family: "Courier New", monospace; /* Updated font */
 }
 
-/* Calculator */
+/* Calculator container */
 #calculator{
-    font-family: "Segoe UI", "Poppins", Arial, sans-serif;
-    background-color: hsl(220, 15%, 18%);
-    border-radius: 18px;
-    max-width: 420px;
-    padding: 10px;
-    box-shadow: 0 15px 35px hsl(220, 20%, 20%, 0.35);
+    position: relative;
+    font-family: "Courier New", monospace; /* Updated font */
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* 🔥 Animated glowing side border */
+#calculator::before{
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 22px;
+    background: linear-gradient(
+        90deg,
+        #ff9f0a,
+        #ffaa33,
+        #ff9f0a
+    );
+    background-size: 300% 300%;
+    animation: glowMove 5s linear infinite;
+    filter: blur(10px);
+    opacity: 0.75;
+    z-index: -1;
+}
+
+@keyframes glowMove{
+    0%{ background-position: 0% 50%; }
+    100%{ background-position: 300% 50%; }
 }
 
 /* Display */
 #display{
     width: 100%;
-    padding: 22px;
-    font-size: 4rem;
+    padding: 25px 20px;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: right;
     border: none;
-    border-radius: 12px;
-    background-color: hsl(220, 15%, 22%);
-    color: hsl(0, 0%, 98%);
-    margin-bottom: 15px;
+    outline: none;
+    background-color: #2a2a2a;
+    color: #ffffff;
 }
 
-/* Keys */
+/* Button grid */
 #keys{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
-    padding: 15px;
+    padding: 20px;
 }
 
 /* Buttons */
 button{
-    width: 90px;
-    height: 90px;
-    border-radius: 45px;
+    aspect-ratio: 1;
+    border-radius: 50%;
     border: none;
-    background-color: hsl(220, 15%, 30%);
+    background-color: #3a3a3a;
     color: white;
-    font-size: 2.6rem;
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
 }
 
+/* Hover & click feedback */
 button:hover{
-    background-color: hsl(58, 94%, 47%);
+    background-color: #4a4a4a;
+    box-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
 button:active{
-    background-color: hsl(70, 98%, 52%);
-    transform: scale(0.95);
+    transform: scale(0.94);
+    background-color: #5a5a5a;
 }
 
-/* Operator Buttons */
+/* Keyboard accessibility */
+button:focus-visible{
+    outline: 3px solid #ffaa33;
+}
+
+/* Operator buttons */
 .operator-btn{
-    background-color: hsl(55, 96%, 46%);
+    background-color: #ff9f0a;
+    color: white; /* Make symbols visible */
 }
 
 .operator-btn:hover{
-    background-color: hsl(61, 94%, 49%);
+    background-color: #ffb347;
+    box-shadow: 0 0 10px rgba(255,159,10,0.6);
 }
 
 .operator-btn:active{
-    background-color: hsl(63, 90%, 47%);
+    background-color: #ffc266;
+}
+
+/* ➕ PLUS button (yellow) */
+#keys button:nth-child(16){
+    background-color: #ff9f0a;
+    color: white; /* FIX: visible text */
+}
+
+#keys button:nth-child(16):hover{
+    background-color: #ffb347;
+}
+
+#keys button:nth-child(16):active{
+    background-color: #ffc266;
 }
