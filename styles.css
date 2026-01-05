@@ -1,42 +1,39 @@
-*{
+/* Page */
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Center the calculator */
-body{
-    margin: 0;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f2f2f2;
-    font-family: "Courier New", monospace; /* Updated font */
+    height: 100vh;
+    background: linear-gradient(135deg, hsl(220, 30%, 96%), hsl(0, 0%, 98%));
+    font-family: "Courier New", monospace;
 }
 
 /* Calculator container */
-#calculator{
+#calculator {
     position: relative;
-    font-family: "Courier New", monospace; /* Updated font */
-    background-color: #1e1e1e;
-    border-radius: 20px;
     width: 100%;
     max-width: 360px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     overflow: hidden;
 }
 
 /* 🔥 Animated glowing side border */
-#calculator::before{
+#calculator::before {
     content: "";
     position: absolute;
     inset: -3px;
     border-radius: 22px;
-    background: linear-gradient(
-        90deg,
-        #ff9f0a,
-        #ffaa33,
-        #ff9f0a
-    );
+    background: linear-gradient(90deg, #ff9f0a, #ffaa33, #ff9f0a);
     background-size: 300% 300%;
     animation: glowMove 5s linear infinite;
     filter: blur(10px);
@@ -44,33 +41,35 @@ body{
     z-index: -1;
 }
 
-@keyframes glowMove{
-    0%{ background-position: 0% 50%; }
-    100%{ background-position: 300% 50%; }
+@keyframes glowMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 /* Display */
-#display{
+#display {
     width: 100%;
     padding: 25px 20px;
     font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: right;
     border: none;
-    outline: none;
+    border-radius: 12px;
     background-color: #2a2a2a;
     color: #ffffff;
+    margin-bottom: 15px;
+    outline: none;
 }
 
 /* Button grid */
-#keys{
+#keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
-    padding: 20px;
 }
 
 /* Buttons */
-button{
+button {
+    width: 90px;
     aspect-ratio: 1;
     border-radius: 50%;
     border: none;
@@ -79,53 +78,51 @@ button{
     font-size: 1.7rem;
     font-weight: bold;
     cursor: pointer;
-    transition:
-        background-color 0.2s ease,
-        transform 0.1s ease,
-        box-shadow 0.1s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 /* Hover & click feedback */
-button:hover{
+button:hover {
     background-color: #4a4a4a;
     box-shadow: 0 0 8px rgba(255,255,255,0.2);
 }
 
-button:active{
-    transform: scale(0.94);
+button:active {
     background-color: #5a5a5a;
-}
-
-/* Keyboard accessibility */
-button:focus-visible{
-    outline: 3px solid #ffaa33;
+    transform: scale(0.94);
 }
 
 /* Operator buttons */
-.operator-btn{
+.operator-btn {
     background-color: #ff9f0a;
-    color: white; /* Make symbols visible */
+    color: white;
 }
 
-.operator-btn:hover{
+.operator-btn:hover {
     background-color: #ffb347;
     box-shadow: 0 0 10px rgba(255,159,10,0.6);
 }
 
-.operator-btn:active{
+.operator-btn:active {
     background-color: #ffc266;
 }
 
-/* ➕ PLUS button (yellow) */
-#keys button:nth-child(16){
-    background-color: #ff9f0a;
-    color: white; /* FIX: visible text */
+/* Keyboard accessibility */
+button:focus-visible {
+    outline: 3px solid #ffaa33;
 }
 
-#keys button:nth-child(16):hover{
+/* Specific PLUS button (16th child) */
+#keys button:nth-child(16) {
+    background-color: #ff9f0a;
+    color: white;
+}
+
+#keys button:nth-child(16):hover {
     background-color: #ffb347;
 }
 
-#keys button:nth-child(16):active{
+#keys button:nth-child(16):active {
     background-color: #ffc266;
 }
+
