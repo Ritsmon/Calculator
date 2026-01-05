@@ -1,21 +1,26 @@
-⏱️ Stopwatch
-A high-accuracy, millisecond-precision stopwatch built with Vanilla JavaScript. This tool is designed for performance and reliability, featuring a clean, responsive interface and robust time-tracking logic.
+🔢 Calculator
+A high-performance, visually striking web calculator featuring an animated glowing aura and a sleek dark-mode aesthetic. This project demonstrates clean JavaScript logic paired with advanced CSS3 animation techniques.
 
 ✨ Features
-Millisecond Precision: Tracks time down to the 1/100th of a second for professional accuracy.
-Time Drift Correction: Uses Date.now() logic to ensure timing remains accurate even if the browser slows down.
-Interactive UI: Smooth hover transitions, scale-on-click feedback, and a clean "Courier New" monospace aesthetic.
-Responsive Design: Utilizes clamp() typography and Flexbox to look great on phones, tablets, and desktops.
-Visual States: Distinct color-coded buttons for Start, Stop, and Reset actions.
-🛠️ Technical Breakdown
-🧠 The Logic Layer
-The stopwatch uses a non-drifting time calculation method:
+Animated Neon Border: A dynamic, rotating glow effect built using CSS custom properties and @keyframes.
+Instant Calculation: Real-time evaluation of mathematical expressions.
+Responsive Grid: A perfectly centered, mobile-friendly 4-column layout using CSS Grid.
+Tactile Feedback: Smooth hover and active states (scaling effects) for a premium user experience.
+Error Handling: Built-in validation to display "ERROR" for mathematically impossible operations.
+🎨 Visual Design
+The UI is inspired by modern "Glassmorphism" and "Neon" trends:
 
-StartTime: Captures the timestamp when "Start" is clicked.
-ElapsedTime: Calculates the difference between Date.now() and the startTime.
-The Math: - Hours, minutes, and seconds are calculated using Math.floor and the Modulo (%) operator.
-Values are formatted using .padStart(2, "0") to ensure the classic 00:00:00:00 look.
-🎨 Styling & UX
-Gradients: A subtle linear-gradient background provides a premium feel.
-Hover Effects: Buttons change color and scale up slightly when hovered to provide clear affordance.
-Monospace Font: Using Courier New ensures that digits don't "jump" or wiggle as the numbers change, as every character takes up the same width.
+Background: Dark-themed (#1e1e1e) for high contrast.
+Accent Colors: Vibrant orange (#ff9f0a) for operators and critical functions.
+Typography: Professional "Courier New", monospace for a technical, precise feel.
+🛠️ Technical Breakdown
+🧠 JavaScript Logic
+The app uses a streamlined approach to handle arithmetic:
+
+appendToDisplay(input): Appends numbers and operators to the string buffer.
+calculate(): Uses the JavaScript eval() engine wrapped in a try...catch block to handle calculations and errors safely.
+clearDisplay(): Resets the state for new computations.
+💄 Advanced CSS Techniques
+Pseudo-elements (::before): Used to create the glowing border without affecting the main calculator's layout.
+aspect-ratio: 1: Ensures all buttons remain perfectly circular regardless of screen width.
+clamp(): Responsive font sizing for the display to prevent text overflow on small screens.
