@@ -10,8 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, hsl(220, 30%, 96%), hsl(0, 0%, 98%));
+    min-height: 100vh;
+    background-color: #f2f2f2;
     font-family: "Courier New", monospace;
 }
 
@@ -53,11 +53,11 @@ body {
     font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: right;
     border: none;
-    border-radius: 12px;
+    outline: none;
     background-color: #2a2a2a;
     color: #ffffff;
     margin-bottom: 15px;
-    outline: none;
+    border-radius: 12px;
 }
 
 /* Button grid */
@@ -65,11 +65,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
+    padding: 20px;
 }
 
 /* Buttons */
 button {
-    width: 90px;
     aspect-ratio: 1;
     border-radius: 50%;
     border: none;
@@ -88,8 +88,13 @@ button:hover {
 }
 
 button:active {
-    background-color: #5a5a5a;
     transform: scale(0.94);
+    background-color: #5a5a5a;
+}
+
+/* Keyboard accessibility */
+button:focus-visible {
+    outline: 3px solid #ffaa33;
 }
 
 /* Operator buttons */
@@ -107,12 +112,7 @@ button:active {
     background-color: #ffc266;
 }
 
-/* Keyboard accessibility */
-button:focus-visible {
-    outline: 3px solid #ffaa33;
-}
-
-/* Specific PLUS button (16th child) */
+/* PLUS button specifically (16th child) */
 #keys button:nth-child(16) {
     background-color: #ff9f0a;
     color: white;
